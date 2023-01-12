@@ -1,1 +1,0 @@
-numbers = input("kolme kokonaislukua: ")
