@@ -1,5 +1,5 @@
+import math
+
 unit = input("ympyrän säde: ")
-rounding= input("montako desimaalia pyöristys?: ")
-area = 3.14159265359*2* int(unit)
-r=int(rounding)
-print("ympyrän pinta-ala on: " + str(round(area,r)))
+area = math.pi * 2 * int(unit)
+print("ympyrän pinta-ala on: " + str(area))
