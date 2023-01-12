@@ -1,0 +1,5 @@
+unit = input("ympyrän säde: ")
+rounding= input("montako desimaalia pyöristys?: ")
+area = 3.14159265359*2* int(unit)
+r=int(rounding)
+print("ympyrän pinta-ala on: " + str(round(area,r)))
