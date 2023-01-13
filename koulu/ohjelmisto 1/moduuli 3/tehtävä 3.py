@@ -1,5 +1,6 @@
 sex = input("Anna sukupuolesi: ")
 hg = int(input("anna hemoglobiini arvosi (g/l): "))
+
 if sex == "nainen" or sex == "Nainen" or sex == "n" or sex == "N":
     if hg <= 117:
         print("hemoglibiinisi on alhainen")
