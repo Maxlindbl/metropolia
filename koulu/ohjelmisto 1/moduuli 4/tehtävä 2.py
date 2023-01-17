@@ -1,3 +1,4 @@
+#muutetaan tuumat senteiksi. negatiivinen luku lopettaa ohjelman
 while True:
     unit = input("anna tuumat: ")
     if int(unit) <= 0:

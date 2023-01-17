@@ -1,3 +1,4 @@
+#kysytään hyttiluokkaa. verrataan annettuihin luokkiin ja tulostetaan selitys luokasta
 clas = input("anna hyttiluokkasi: ")
 
 if clas == "LUX" or clas == "lux":
