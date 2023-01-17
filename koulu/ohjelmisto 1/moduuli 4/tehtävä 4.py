@@ -1,3 +1,4 @@
+#arvotaan luku jota käyttäjä koittaa arvata. ohjelma lopettaa toimintansa kun käyttäjä arvaa oikein
 import random
 num = random.randint(1,10)
 while True:
