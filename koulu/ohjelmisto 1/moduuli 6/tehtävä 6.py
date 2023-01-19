@@ -1,6 +1,6 @@
 import math
 def pizza(size, price):
-    area = math.pi * (size / 2) ** 2 / 1000
+    area = math.pi * (size / 2) ** 2 / 10000
     value = area / price
     return value
 
