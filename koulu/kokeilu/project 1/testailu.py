@@ -1,3 +1,3 @@
-import random
-y = random.uniform(-1,1)
-print(y)
+import math
+area = math.pi * (100 / 2) ** 2 / 10000
+print(area)
