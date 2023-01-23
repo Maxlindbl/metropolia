@@ -36,19 +36,20 @@ for i in range(10):
 #print(Cars)
 
 maxdistance = 0
-while True:
+while maxdistance <= 10000:
     for Racecar in Cars:
         Racecar.Accelerate(random.randint(-10, 15))
         Racecar.Moving(1)
         if Racecar.distance >= maxdistance:
             maxdistance = Racecar.distance
-    if maxdistance >= 10000:
-        my_table = PrettyTable()
-        my_table.field_names = ["rekisterinumero", "ajettu matka", "huippunopeus"]
-        for Racecar in Cars:
-            my_table.add_row( [Racecar.license_plate, Racecar.distance, Racecar.max_speed])
-        my_table.sortby = "ajettu matka"
-        my_table.reversesort = True
-        print(my_table)
-        break
+
+my_table = PrettyTable()
+my_table.field_names = ["rekisterinumero", "ajettu matka", "huippunopeus"]
+
+for Racecar in Cars:
+    my_table.add_row( [Racecar.license_plate, Racecar.distance, Racecar.max_speed])
+    my_table.sortby = "ajettu matka"
+my_table.reversesort = True
+print(my_table)
+
 
