@@ -7,6 +7,7 @@ class Car:
 
     def Accelerate(self,speed_up):
         self.speed = self.speed + speed_up
+#asetetaan raja-arvot  nopeudelle
         if self.speed >= self.max_speed:
             self.speed = self.max_speed
         if self.speed <= 0:
@@ -16,6 +17,7 @@ class Car:
 
 
 new_car = Car("abc-123", 142, 0, 0)
+#annetaan autolle nopeus arvoja
 new_car.Accelerate(+ 30)
 new_car.Accelerate(+ 70)
 new_car.Accelerate(+ 50)
