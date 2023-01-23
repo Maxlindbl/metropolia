@@ -2,7 +2,7 @@ import mysql.connector
 def airports(country):
     sql = "SELECT type FROM airport"
     sql += " WHERE iso_country='" + country + "'"
-    print(sql)
+    #print(sql)
     cursor = connection.cursor()
     cursor.execute(sql)
     result = cursor.fetchall()
