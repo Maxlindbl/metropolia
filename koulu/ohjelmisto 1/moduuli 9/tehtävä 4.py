@@ -42,13 +42,12 @@ while maxdistance <= 10000:
         Racecar.Moving(1)
         if Racecar.distance >= maxdistance:
             maxdistance = Racecar.distance
-
+#kaavion luominen
 my_table = PrettyTable()
 my_table.field_names = ["rekisterinumero", "ajettu matka", "huippunopeus"]
-
 for Racecar in Cars:
     my_table.add_row( [Racecar.license_plate, Racecar.distance, Racecar.max_speed])
-    my_table.sortby = "ajettu matka"
+my_table.sortby = "ajettu matka"
 my_table.reversesort = True
 print(my_table)
 
