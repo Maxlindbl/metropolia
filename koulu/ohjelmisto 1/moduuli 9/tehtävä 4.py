@@ -1,4 +1,5 @@
 import random
+from prettytable import PrettyTable
 
 
 
@@ -42,6 +43,12 @@ while True:
         if Racecar.distance >= maxdistance:
             maxdistance = Racecar.distance
     if maxdistance >= 10000:
+        my_table = PrettyTable()
+        my_table.field_names = ["rekisterinumero", "ajettu matka", "huippunopeus"]
         for Racecar in Cars:
-            print(f"auto {Racecar.license_plate} kulki {Racecar.distance}km. Auton maksiminopeus oli {Racecar.max_speed}km/h")
+            my_table.add_row( [Racecar.license_plate, Racecar.distance, Racecar.max_speed])
+        my_table.sortby = "ajettu matka"
+        my_table.reversesort = True
+        print(my_table)
         break
+
