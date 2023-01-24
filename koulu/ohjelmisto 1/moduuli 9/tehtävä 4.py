@@ -29,7 +29,7 @@ class Racecar:
 Cars = []
 number = 1
 
-random_num = random.randint(100, 200)
+
 for i in range(10):
     Cars.append(Racecar("abc-" + str(number), random.randint(100, 200), 0, 0))
     number = number + 1
