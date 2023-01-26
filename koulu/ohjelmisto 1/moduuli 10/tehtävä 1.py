@@ -5,12 +5,10 @@ class Elevator:
         self.floor = floor
 #määrittellään pitääkö hissin mennä ylös vai alas
     def Go_floor(self, go_to):
-        if self.floor < go_to:
-            while self.floor != go_to:
+        while self.floor != go_to:
+            if self.floor < go_to:
                 self.Go_up()
-        if self.floor > go_to:
-            self.Go_down()
-            while self.floor != go_to:
+            if self.floor > go_to:
                 self.Go_down()
         print("olet perillä")
 #hissi ylös
@@ -25,6 +23,5 @@ class Elevator:
 
 #kutsutaan hissiä
 elevator = Elevator(9,0,0)
-elevator.Go_floor(7)
+elevator.Go_floor(8)
 elevator.Go_floor(0)
-
