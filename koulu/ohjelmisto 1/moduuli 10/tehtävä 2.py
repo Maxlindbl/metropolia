@@ -1,11 +1,17 @@
 class House:
-    def __init__(self,house_top_floor, house_bottom_floor, elevators):
+    def __init__(self,house_top_floor, house_bottom_floor, ammount):
         self.house_top_floor = house_top_floor
         self.house_bottom_floor = house_bottom_floor
         self.elevators = []
+        self.ammount = ammount
+        self.elevator_floor = 0
+        for i in range(self.ammount):
+            self.elevators.append(Elevator(self.house_top_floor, self.house_bottom_floor, self.elevator_floor))
 
     def Action(self,elevator_number, floor_number):
-        self.elevators.append(Elevator)
+        print(f"hissi {elevator_number}")
+        self.elevators[elevator_number - 1].Go_floor(floor_number)
+
 
 
 class Elevator:
@@ -20,7 +26,7 @@ class Elevator:
                 self.Go_up()
             if self.floor > go_to:
                 self.Go_down()
-        print("olet perillä")
+        print(f"olet perillä kerroksessa {self.floor}")
 #hissi ylös
     def Go_up(self,):
         self.floor = self.floor + 1
@@ -33,9 +39,10 @@ class Elevator:
 
 
 #kutsutaan hissiä
-elevator = Elevator(25,0,0)
+
 house = House(25,0,3)
 
-elevator.Go_floor(7)
-elevator.Go_floor(0)
+house.Action(1,20)
+house.Action(3,15)
+house.Action(1,10)
 house.Action(2,8)
