@@ -10,7 +10,7 @@ class Elevator:
                 self.Go_up()
             if self.floor > go_to:
                 self.Go_down()
-        print("olet perillä")
+        print(f"olet perillä kerroksessa {self.floor}")
 #hissi ylös
     def Go_up(self,):
         self.floor = self.floor + 1
