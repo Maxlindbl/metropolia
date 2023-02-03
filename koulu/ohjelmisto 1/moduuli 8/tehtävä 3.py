@@ -1,8 +1,8 @@
 import mysql.connector
 from geopy.distance import geodesic as GD
-def location_first(icao_first):
+def location(icao):
     sql = "SELECT latitude_deg, longitude_deg FROM airport"
-    sql += " WHERE ident='" + icao_first + "'"
+    sql += " WHERE ident='" + icao + "'"
     #print(sql)
     cursor = connection.cursor()
     cursor.execute(sql)
@@ -11,7 +11,7 @@ def location_first(icao_first):
     #print(result)
     return result
 
-def location_second(icao_second):
+"""def location_second(icao_second):
     sql = "SELECT latitude_deg, longitude_deg FROM airport"
     sql += " WHERE ident='" +icao_second + "'"
     #print(sql)
@@ -20,7 +20,7 @@ def location_second(icao_second):
     result = cursor.fetchall()
 # mitä tehdään tuloksilla
     #print(result)
-    return result
+    return result"""
 
 
 
@@ -37,6 +37,6 @@ icao_first = input("anna ensinmäisen kentän icao koodi: ")
 icao_second = input("anna toisen kentän icao koodi: ")
 
 
-location_first(icao_first)
-location_second(icao_second)
-print(f"kenttien välinen etäisyyss on {round(GD(location_first(icao_first),location_second(icao_second)).km,4)} km")
+location(icao_first)
+location(icao_second)
+print(f"kenttien välinen etäisyyss on {round(GD(location(icao_first),location(icao_second)).km,4)} km")
