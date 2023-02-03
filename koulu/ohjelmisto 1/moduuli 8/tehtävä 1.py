@@ -1,7 +1,7 @@
 import mysql.connector
 
 def airports(icao):
-    sql = "SELECT name, iso_region FROM airport"
+    sql = "SELECT name, municipality FROM airport"
     sql += " WHERE ident='" + icao + "'"
     #print(sql)
     kursori = yhteys.cursor()
