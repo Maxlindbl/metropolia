@@ -35,13 +35,13 @@ for i in range(10):
     number = number + 1
 #print(Cars)
 
-maxdistance = 0
-while maxdistance <= 10000:
+race_distance = 0
+while race_distance <= 10000:
     for Racecar in Cars:
         Racecar.Accelerate(random.randint(-10, 15))
         Racecar.Moving(1)
-        if Racecar.distance >= maxdistance:
-            maxdistance = Racecar.distance
+        if Racecar.distance >= race_distance:
+            race_distance = Racecar.distance
 #kaavion luominen
 my_table = PrettyTable()
 my_table.field_names = ["rekisterinumero", "ajettu matka", "huippunopeus"]

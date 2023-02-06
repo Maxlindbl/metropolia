@@ -11,9 +11,7 @@ def get_airport_data(icao):
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
-    #if kursori.rowcount >0 :
-        #for rivi in tulos:
-            #print(f"kenttä on nimeltään {rivi[0]}. ja se sijaitsee:  {rivi[1]}.")
+
 
     return tulos
 
