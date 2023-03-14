@@ -13,6 +13,7 @@ class House:
         self.elevators[elevator_number - 1].Go_floor(floor_number)
 
     def Fire_allert(self):
+        print("palohälytys")
         counter = 1
         for Elevator in self.elevators:
             print(f"hissi nro {counter}")
@@ -55,3 +56,6 @@ house.Action(3,15)
 house.Action(1,10)
 house.Action(2,8)
 house.Fire_allert()
+house.Action(1,5)
+house.Action(3,11)
+house.Action(2,14)
