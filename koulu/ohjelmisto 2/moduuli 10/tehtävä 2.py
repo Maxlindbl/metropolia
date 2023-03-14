@@ -4,7 +4,7 @@ class House:
         self.house_bottom_floor = house_bottom_floor
         self.elevators = []
         self.ammount = ammount
-        self.elevator_floor = 0
+        self.elevator_floor = house_bottom_floor
         for i in range(self.ammount):
             self.elevators.append(Elevator(self.house_top_floor, self.house_bottom_floor, self.elevator_floor))
 

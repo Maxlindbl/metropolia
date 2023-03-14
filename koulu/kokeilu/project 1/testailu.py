@@ -1,27 +1,52 @@
-class Elevator:
-    def __init__(self,top_floor, bottom_floor, floor):
-        self.top_floor = top_floor
-        self.bottom_floor = bottom_floor
-        self.floor = floor
-#määrittellään pitääkö hissin mennä ylös vai alas
-    def Go_floor(self, go_to):
-        while self.floor != go_to:
-            if self.floor < go_to:
-                self.Go_up()
-            if self.floor > go_to:
-                self.Go_down()
-        print("olet perillä")
-#hissi ylös
-    def Go_up(self,):
-        self.floor = self.floor + 1
-        print(self.floor)
-#hissi alas
-    def Go_down(self,):
-        self.floor = self.floor - 1
-        print(self.floor)
+class Hissi:
+    def __init__(self, alin, ylin):
+        self.alin = alin
+        self.ylin = ylin
+        self.nykyinen = alin
+
+    def siirry_kerrokseen(self, kerros):
+        if self.nykyinen < kerros:
+            while self.nykyinen != kerros:
+                self.kerros_ylos()
+                if self.nykyinen == self.ylin:
+                    break
+            print(f"\nOlet nyt saapunut kerrokseen {self.nykyinen}\n")
+        elif self.nykyinen > kerros:
+            while self.nykyinen != kerros:
+                self.kerros_alas()
+                if self.nykyinen == self.alin:
+                    break
+            print(f"\nOlet nyt saapunut kerrokseen {self.nykyinen}\n")
+        else:
+            print(f"Olet jo kerroksessa {kerros}\n")
+
+    def kerros_ylos(self):
+        if self.nykyinen < self.ylin:
+            self.nykyinen += 1
+            print(f"Kerros {self.nykyinen}")
+
+    def kerros_alas(self):
+        if self.nykyinen > self.alin:
+            self.nykyinen -= 1
+            print(f"Kerros {self.nykyinen}")
+
+    def nykyinen_kerros(self):
+        return self.nykyinen
 
 
-#kutsutaan hissiä
-elevator = Elevator(9,0,0)
-elevator.Go_floor(8)
-elevator.Go_floor(0)
+class Talo:
+
+    def __init__(self, alin, ylin, hissit):
+        self.alin = alin
+        self.ylin = ylin
+        self.lista = []
+        self.hissit = hissit
+        for i in range(self.hissit):
+            self.lista.append(Hissi(self.alin, self.ylin))
+
+    def aja_hissia(self, nro, kerros):
+        self.lista[nro-1].siirry_kerrokseen(kerros)
+        print(f"Talon hissi nro {nro} on nyt kerroksessa {self.lista[nro-1].nykyinen_kerros()}")
+
+t = Talo(1,8,3)
+t.aja_hissia(2,5)
