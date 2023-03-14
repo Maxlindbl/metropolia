@@ -1,28 +1,9 @@
-airports = {}
-action = "ok"
+uusi_tulos = [(item[0], item[-1], self.risk + item[-1] / self.risk_kerroin) for item in tulos]
+        table = PrettyTable()
+        table.field_names = ["#", "Lentokentän nimi", "Etäisyys KM", "Riski jäädä kiinni %"]
+        for i, row in enumerate(uusi_tulos):
+            #lasketaan etäisyyden mukaan riski jokaiselle kentälle jäädä kiinni
 
-def add():
-    icao = input("syötä lentokentän icao koodi: ")
-    name = input("Syötä lentokentän nimi: ")
-    airports[icao] = name
-    return
-def search():
-    search = input("syötä kentän icao koodi: ")
-    if search in airports:
-        print(f"icao {search} koodin kentän nimi on {airports[search]}")
-    else:
-        print("kenttää ei löytynyt")
-    return
-
-
-while action != "Lopeta":
-    action = input("Haluatko syöttää uuden lentokentän (Syötä), hakea syötetyn lentokentän tiedot (hakea) vai lopettaa (Lopeta): ")
-    if action == "syötä":
-        add()
-    elif action == "hakea":
-        search()
-    elif action == "Lopeta":
-        print("kiitos ja näkemiin")
-        break
-    else:
-        print("syötit väärän toiminnan, kokeile uudestaan")
+            etäisyys = row[-1]
+            risk = round((etäisyys / self.risk_kerroin) + self.risk, 2)
+            table.add_row([i + 1] + list(row) + [risk])

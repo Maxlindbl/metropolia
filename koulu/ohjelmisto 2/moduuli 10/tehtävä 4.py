@@ -1,5 +1,6 @@
 import random
-from prettytable import PrettyTable
+from prettytable import PrettyTable, from_db_cursor
+
 
 
 class Race:
